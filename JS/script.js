@@ -87,20 +87,22 @@ const $stol = document.getElementById('stol')
 const $igrok2 = document.getElementById('igrok2')
 
 let htmlkod = ''
-
-gmr1.forEach((item) => {
-    htmlkod += `<label id = "${item}" class = "gamer1">/${item}\\</label>`
+//<img src="GIF/1.gif" alt="">
+gmr1.forEach((item, namber) => {
+    // htmlkod += `<label id = "${item}" class = "gamer1">/${item}\\</label>`
+    htmlkod += `<img id = "${item}" src="GIF/${user1[namber]}.gif" class = "gamer1">`
 })
 $igrok1.innerHTML = htmlkod
 htmlkod = ''
 
 
+$stol.innerHTML = `<img id = "${vseKarts[kozir]}" src="GIF/${kozir}.gif" class = "gamer2">`
 
+//$stol.innerHTML = `<button>${vseKarts[kozir]} ostalos ${koloda.length}</button>`
 
-$stol.innerHTML = `<button>${vseKarts[kozir]} ostalos ${koloda.length}</button>`
-
-gmr2.forEach((item) => {
-    htmlkod += `<label id = "${item}" class = "gamer2">/${item}\\</label>`
+gmr2.forEach((item, namber) => {
+    // htmlkod += `<label id = "${item}" class = "gamer2">/${item}\\</label>`
+    htmlkod += `<img id = "${item}" src="GIF/${user2[namber]}.gif" class = "gamer2">`
 })
 
 $igrok2.innerHTML = htmlkod
@@ -156,13 +158,15 @@ console.log(oheredChiy)
 const $sourse = document.getElementById('sourse')
 
 $sourse.addEventListener('click', (e) => {
-    if(event.target.className == oheredChiy) {
+    if(e.target.className == oheredChiy) {
 
-        e.target.parentNode.removeChild(e.target);
 
-        console.log(event.target.id)
-        vilogNaStol(oheredChsiy, event.target.id)
+        console.log(e.target.id)
+
+
+        vilogNaStol(oheredChiy, e.target.id)
         
+        e.target.parentNode.removeChild(e.target);
     }
 })
 
