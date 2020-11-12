@@ -1,0 +1,46 @@
+body {
+    background: green
+}
+
+#bito {
+    position: absolute;
+    right: 3%;
+    top: 35%;
+
+    width: 400px;
+    height: 110px;
+    font-size: 100px;
+    background: blue;
+    color: black;
+}
+
+#vzyt {
+    position: absolute;
+    right: 7%;
+    top: 45%;
+
+    width: 200px;
+    height: 70px;
+    font-size: 50px;
+    background: blueviolet;
+    color: black;
+}
+
+#igrok1 {
+    position: absolute;
+    right: 25%;
+    top: 10%;
+}
+
+
+#stol {
+    position: absolute;
+    right: 88%;
+    top: 40%;
+}
+
+#igrok2 {
+    position: absolute;
+    right: 25%;
+    top: 75%;
+}

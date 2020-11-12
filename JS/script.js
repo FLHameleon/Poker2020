@@ -51,7 +51,6 @@ vseKarts.forEach(() => {
 let user1 = [1,2,3,4,5,6]
 let user2 = [1,2,3,4,5,6]
 
-
 user1.forEach((item, nomer) => {
     user1[nomer] = koloda.shift()
 })
@@ -81,7 +80,6 @@ user2.forEach((item) => {
 console.log('ryka1 ',gmr1)
 console.log('ryka2 ',gmr2)
 
-
 const $igrok1 = document.getElementById('igrok1')
 const $stol = document.getElementById('stol')
 const $igrok2 = document.getElementById('igrok2')
@@ -96,8 +94,7 @@ $igrok1.innerHTML = htmlkod
 htmlkod = ''
 
 
-$stol.innerHTML = `<img id = "${vseKarts[kozir]}" src="GIF/${kozir}.gif" class = "gamer2">`
-
+$stol.innerHTML = `<img id = "${vseKarts[kozir]}" src="GIF/${kozir}.gif">`
 //$stol.innerHTML = `<button>${vseKarts[kozir]} ostalos ${koloda.length}</button>`
 
 gmr2.forEach((item, namber) => {
@@ -158,6 +155,7 @@ console.log(oheredChiy)
 const $sourse = document.getElementById('sourse')
 
 $sourse.addEventListener('click', (e) => {
+    console.log(e.target.id, '===', izNazvanVNamber(e.target.id))
     if(e.target.className == oheredChiy) {
 
 
@@ -218,6 +216,20 @@ function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
-  }
+}
+
+function izNazvanVNamber(strNazv) {
+    let arrRazdel
+    let namber
+
+    arrRazdel = rzbMastRoll(strNazv)
+    arrRazdel[0] = vidMasti.indexOf(arrRazdel[0])
+
+    arrRazdel[1] = vidKart.indexOf(arrRazdel[1])
+
+    namber = arrRazdel[0] * vidKart.length + arrRazdel[1]
+
+    return namber
+}
 
 //////////////////////////////////////////////////////////////////////////////////
